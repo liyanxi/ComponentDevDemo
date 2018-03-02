@@ -1,0 +1,63 @@
+apply plugin: 'com.android.library'
+
+// 导入版本依赖库管理文件
+apply from: '../versions.gradle'
+
+android {
+    compileSdkVersion build_versions.target_sdk
+    buildToolsVersion build_versions.build_tools
+
+    defaultConfig {
+        minSdkVersion build_versions.min_sdk
+        targetSdkVersion build_versions.target_sdk
+        versionCode 1
+        versionName "1.0"
+    }
+
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    androidTestImplementation(deps.espresso.core, {
+        exclude group: 'com.android.support', module: 'support-annotations'
+        exclude group: 'com.google.code.findbugs', module: 'jsr305'
+    })
+    androidTestImplementation(deps.espresso.contrib, {
+        exclude group: 'com.android.support', module: 'support-annotations'
+        exclude group: 'com.google.code.findbugs', module: 'jsr305'
+    })
+    implementation deps.support.app_compat
+    implementation deps.support.recyclerview
+    implementation deps.support.cardview
+    implementation deps.support.design
+    implementation deps.glide.runtime
+    implementation deps.dagger.android_support
+    implementation deps.constraint_layout
+    implementation deps.timber
+    implementation deps.dagger.runtime
+    implementation deps.dagger.android
+    implementation deps.retrofit.runtime
+    implementation deps.retrofit.adapter_rxjava
+    implementation deps.retrofit.adapter_scalars
+    implementation deps.rxjava2
+    implementation deps.rx_android
+    implementation deps.butterknife.runtime
+//    implementation deps.pdf_viewer
+    implementation deps.eventbus
+    implementation deps.gson
+    implementation deps.logging
+    implementation deps.rxpermission
+    implementation deps.ultra_ptr
+    implementation deps.grid_password_view
+    implementation deps.umeng_analytics
+    releaseCompile deps.leakcanary.release_compiler
+    annotationProcessor deps.dagger.android_support_compiler
+    annotationProcessor deps.dagger.compiler
+    annotationProcessor deps.butterknife.compiler
+    annotationProcessor deps.glide.compiler
+    androidTestImplementation deps.support.app_compat
+    androidTestImplementation deps.support.recyclerview
+    androidTestImplementation deps.support.cardview
+    androidTestImplementation deps.support.design
+    debugCompile deps.leakcanary.debug_compiler
+}
