@@ -45,4 +45,7 @@ dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
 
     implementation project(':module-common')
+
+    //路由 aRouter compiler
+    annotationProcessor deps.aRouter.compiler
 }

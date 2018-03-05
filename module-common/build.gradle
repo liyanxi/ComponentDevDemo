@@ -60,4 +60,7 @@ dependencies {
     androidTestImplementation deps.support.cardview
     androidTestImplementation deps.support.design
     debugCompile deps.leakcanary.debug_compiler
+
+    //路由 aRouter
+    implementation deps.aRouter.api
 }

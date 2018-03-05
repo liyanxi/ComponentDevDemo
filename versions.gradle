@@ -26,6 +26,10 @@ versions.gson = "2.6.1"
 versions.logging = "3.4.2"
 versions.ultra_ptr = "1.0.11"
 
+//ARouter
+versions.arouter_compiler = "1.1.4"
+versions.arouter_api = "1.3.1"
+
 def deps = [:]
 
 def support = [:]
@@ -81,6 +85,11 @@ def glide = [:]
 glide.runtime = "com.github.bumptech.glide:glide:$versions.glide"
 glide.compiler = "com.github.bumptech.glide:compiler:$versions.glide"
 deps.glide = glide
+
+def aRouter = [:]
+aRouter.api = "com.alibaba:arouter-api:$versions.arouter_api"
+aRouter.compiler = "com.alibaba:arouter-compiler:$versions.arouter_compiler"
+deps.aRouter = aRouter
 
 deps.android_gradle_plugin = "com.android.tools.build:gradle:$versions.android_gradle_plugin"
 deps.constraint_layout = "com.android.support.constraint:constraint-layout:$versions.constraint_layout"
